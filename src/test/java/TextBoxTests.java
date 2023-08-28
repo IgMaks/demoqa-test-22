@@ -20,14 +20,14 @@ public class TextBoxTests {
     void fillFormTest() {
         open("/text-box");
 
-        $("id=userName").setValue("Ivan");
+        $("#userName").setValue("Ivan");
         $("#userEmail").setValue("Ivan@ya.ru");
         $("#currentAddress").setValue("Address info");
         $("#permanentAddress").setValue("Permanent Address- address");
         $("#submit").click();
         $("#output").shouldBe(visible);
         $("#output #name").shouldHave(text("Ivan"));
-        $("#output #userEmail").shouldHave(text("Ivan@ya.ru"));
+        $("#output #email").shouldHave(text("Ivan@ya.ru"));
         $("#output #currentAddress").shouldHave(text("Address info"));
 
     }

@@ -20,7 +20,6 @@ public class PracticeForm {
     @Test
     void practiceFormTest() {
         open("/automation-practice-form");
-//        sleep(5000);
 
         $("#firstName").setValue("Ivan");
         $("#lastName").setValue("Ivanovich");
@@ -33,18 +32,28 @@ public class PracticeForm {
         $(".react-datepicker__day--001").click();
         $("#subjectsInput").setValue("p").pressEnter();
 //       Выбор хобби
-        $x("//*[@id=hobbies-checkbox-1]").click();
+//        $("#hobbies-checkbox-1").click();
 
         $("#uploadPicture").uploadFile(new File("src/resources/1.jpg"));
         $("#currentAddress").setValue("Current Address- address");
         $("#state").click();
-        $("#state").setValue("NCR").click();
-//        $("#city").click();
-//        $("#city").setValue("Delhi").pressEnter();
-//        $("#submit").click();
-//        $("#output #name").shouldHave(text("Ivan"));
-//        $("#output #userEmail").shouldHave(text("Ivan@ya.ru"));
-//        $("#output #currentAddress").shouldHave(text("Address info"));
+        $("#react-select-3-input").setValue("NCR").pressEnter();
+        $("#city").click();
+        $("#react-select-4-input").setValue("Delhi").pressEnter();
+        $("#submit").click();
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $(".table-responsive").shouldHave(text("Ivan Ivanovich"));
+        $(".table-responsive").shouldHave(text("Ivanovich@ya.ru"));
+        $(".table-responsive").shouldHave(text("Male"));
+        $(".table-responsive").shouldHave(text("9712345674"));
+        $(".table-responsive").shouldHave(text("Physics"));
+        $(".table-responsive").shouldHave(text("1.jpg"));
+        $(".table-responsive").shouldHave(text("Current Address- address"));
+        $(".table-responsive").shouldHave(text("NCR Delhi"));
+
+
+//        Закрыть модальное окно
+        $("#closeLargeModal").click();
     }
 }
 
