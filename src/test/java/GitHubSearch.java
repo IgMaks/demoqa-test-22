@@ -10,7 +10,7 @@ public class GitHubSearch {
 
     static void beforeAll() {
 //        Arrange
-        Configuration.holdBrowserOpen = false;
+        Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
     }
@@ -22,8 +22,7 @@ public class GitHubSearch {
         $(".input-button").click();
         $("#query-builder-test").setValue("Selenide").pressEnter();
 //        в списке найденных репозиториев найти
-        $x("//a[@href='/selenide/selenide']").click();
-
+        $$("div.Box-sc-g0xbh4-0.search-title").first().$("a").click();
         $("#repository-container-header").shouldHave(text("selenide / selenide"));
 
 
