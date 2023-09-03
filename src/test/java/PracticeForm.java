@@ -21,12 +21,16 @@ public class PracticeForm {
     void practiceFormTest() {
 
         open("/automation-practice-form");
+        String UserName = new String("Ivan ");
+        String UserLastName = new String("Ivanov");
+        String UserEmail = new String("Ivanovich@ya.ru");
+        String UserPhone = new String("9712345674");
 
-        $("#firstName").setValue("Ivan");
-        $("#lastName").setValue("Ivanovich");
-        $("#userEmail").setValue("Ivanovich@ya.ru");
+        $("#firstName").setValue(UserName);
+        $("#lastName").setValue(UserLastName);
+        $("#userEmail").setValue(UserEmail);
         $(".custom-control-label").click();
-        $("#userNumber").setValue("9712345674");
+        $("#userNumber").setValue(UserPhone);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("February");
         $(".react-datepicker__year-select").selectOption("2000");
@@ -42,10 +46,10 @@ public class PracticeForm {
         $("#submit").click();
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(
-                text("Ivan Ivanovich"),
-                text("Ivanovich@ya.ru"),
+                text(UserName+UserLastName),
+                text(UserEmail),
                 text("Male"),
-                text("9712345674"),
+                text(UserPhone),
                 text("Physics"),
                 text("1.jpg"),
                 text("Current Address- address"),
