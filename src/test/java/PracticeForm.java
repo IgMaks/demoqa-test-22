@@ -12,13 +12,14 @@ import static com.codeborne.selenide.Selenide.*;
 public class PracticeForm {
     @BeforeAll
     static void beforeAll(){
-        Configuration.holdBrowserOpen = true;
+        Configuration.holdBrowserOpen = false;
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy="eager";
     }
     @Test
     void practiceFormTest() {
+
         open("/automation-practice-form");
 
         $("#firstName").setValue("Ivan");

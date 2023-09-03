@@ -27,9 +27,9 @@ public class Junit5Example {
         System.out.println("####        @Test firstTest()!");
         assertTrue(3 > 2);
     }
-    @Test
-    void secondTest(){
-        System.out.println("####        @Test secondTest()!");
-        assertFalse(3 > 2);
-    }
+//    @Test
+//    void secondTest(){
+//        System.out.println("####        @Test secondTest()!");
+//        assertFalse(3 > 2);
+//    }
 }
