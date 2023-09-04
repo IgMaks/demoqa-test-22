@@ -16,6 +16,5 @@ public class SelenbideContributors {
                 .ancestor("div").$$("ul li").first().hover();
 //        Поиск видимого элемента
         $$(".Popover").findBy(visible).shouldHave(text("Andrei Solntsev"));
-
     }
 }
